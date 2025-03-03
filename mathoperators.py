@@ -23,15 +23,18 @@ def findVolumeOfCone(radius, height):
 def findVolumeOfCylinder(radius, height):
     return math.pi * radius * radius * height
 
+# defining variables, inputted by the user through the terminal
+# ----------------------------------
+
 # variables to be used for basic math
-a = 1
-b = 3
+a = input("Enter a value then press enter... ")
+b = input("Enter b value then press enter... ")
+c = input("Enter c value then press enter... ")
 
 # defining arbitrary parameters for the shapes we want to calculate
-# these will be set via user input soon
-radius = 1
-width = 5
-height = 2
+radius = input("Enter radius value then press enter... ")
+width = input("Enter width value then press enter... ")
+height = input("Enter height value then press enter... ")
 
 # demonstrating basic math
 # --------------------------------
