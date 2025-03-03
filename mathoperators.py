@@ -38,6 +38,7 @@ def runMainPrompt():
 
     if (userInput == "help"):
         print("Here is a list of all possible commands:")
+        print("")
         print("add")
         print("subtract")
         print("multiply")
@@ -48,6 +49,8 @@ def runMainPrompt():
         print("volume-sphere")
         print("volume-cone")
         print("volume-cylinder")
+        print("")
+        runMainPrompt()
     elif (userInput == "add"):
         runAddCommand()
     elif (userInput == "subtract"):
