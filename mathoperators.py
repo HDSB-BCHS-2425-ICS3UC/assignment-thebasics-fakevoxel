@@ -1,5 +1,9 @@
 import math
 
+# ===================================================
+# HELPER FUNCTIONS:
+# ===================================================
+
 # find the discriminant of a quadratic, given the coefficients
 def discriminant(a, b, c):
     return (b * b) - (4 * a * c)
@@ -23,46 +27,144 @@ def findVolumeOfCone(radius, height):
 def findVolumeOfCylinder(radius, height):
     return math.pi * radius * radius * height
 
-# defining variables, inputted by the user through the terminal
+# functions for handling commands
 # ----------------------------------
 
-# variables to be used for basic math
-a = float(input("Enter a value then press enter... "))
-b = float(input("Enter b value then press enter... "))
-c = float(input("Enter c value then press enter... "))
+def runMainPrompt():
+    print("----------------------------------")
+    print("What operation would you like to run? Type (help) for all possible commands.")
 
-# defining arbitrary parameters for the shapes we want to calculate
-radius = float(input("Enter radius value then press enter... "))
-width = float(input("Enter width value then press enter... "))
-height = float(input("Enter height value then press enter... "))
+    userInput = input()
 
-# demonstrating basic math
-# --------------------------------
+    if (userInput == "help"):
+        print("Here is a list of all possible commands:")
+        print("add")
+        print("subtract")
+        print("multiply")
+        print("divide")
+        print("modulus")
+        print("discriminant")
+        print("volume-cube")
+        print("volume-sphere")
+        print("volume-cone")
+        print("volume-cylinder")
+    elif (userInput == "add"):
+        runAddCommand()
+    elif (userInput == "subtract"):
+        runSubtractCommand()
+    elif (userInput == "multiply"):
+        runMultiplyCommand()
+    elif (userInput == "divide"):
+        runDivideCommand()
+    elif (userInput == "discriminant"):
+        runDiscriminantCommand()
+    elif (userInput == "volume-cube"):
+        runVolumeCubeCommand()
+    elif (userInput == "volume-sphere"):
+        runVolumeSphereCommand()
+    elif (userInput == "volume-cone"):
+        runVolumeConeCommand()
+    elif (userInput == "volume-cylinder"):
+        runVolumeCylinderCommand()
 
 # addition
-print(str(a) + " plus " + str(b) + " is " + str(a+b) + ".")
+def runAddCommand():
+    # variables to be used for basic math
+    a = float(input("Enter a value then press enter... "))
+    b = float(input("Enter b value then press enter... "))
+
+    
+    print(str(a) + " plus " + str(b) + " is " + str(a+b) + ".")
+    runMainPrompt()
+
 # subtraction
-print(str(a) + " minus " + str(b) + " is " + str(a-b) + ".")
+def runSubtractCommand():
+    # variables to be used for basic math
+    a = float(input("Enter a value then press enter... "))
+    b = float(input("Enter b value then press enter... "))
+
+    print(str(a) + " minus " + str(b) + " is " + str(a-b) + ".")
+    runMainPrompt()
+
 # multiplication
-print(str(a) + " multiplied by " + str(b) + " is " + str(a*b) + ".")
+def runMultiplyCommand():
+    # variables to be used for basic math
+    a = float(input("Enter a value then press enter... "))
+    b = float(input("Enter b value then press enter... "))
+
+    print(str(a) + " multiplied by " + str(b) + " is " + str(a*b) + ".")
+    runMainPrompt()
+
 # division
-print(str(a) + " divided by " + str(b) + " is " + str(a/b) + ".")
+def runDivideCommand():
+    # variables to be used for basic math
+    a = float(input("Enter a value then press enter... "))
+    b = float(input("Enter b value then press enter... "))
+
+    print(str(a) + " divided by " + str(b) + " is " + str(a/b) + ".")
+    runMainPrompt()
+
 # modulus
-print(str(a) + " modulo " + str(b) + " is " + str(a%b) + ".")
+def runModulusCommand():
+    # variables to be used for basic math
+    a = float(input("Enter a value then press enter... "))
+    b = float(input("Enter b value then press enter... "))
+
+    print(str(a) + " modulo " + str(b) + " is " + str(a%b) + ".")
+    runMainPrompt()
 
 # discriminant
-# -----------------------
+def runDiscriminantCommand():
+    # coefficients of the quadratic
+    a = float(input("Enter a value then press enter... "))
+    b = float(input("Enter b value then press enter... "))
+    c = float(input("Enter c value then press enter... "))
 
-print("The discriminant of a quadratic with coefficients of a=" + str(a) + ", b=" + str(b) + ", c=" + str(c) + " is " + str(discriminant(a, b, c)))
+    print("The discriminant of a quadratic with coefficients of a=" + str(a) + ", b=" + str(b) + ", c=" + str(c) + " is " + str(discriminant(a, b, c)))
+    runMainPrompt()
 
-# demonstrating the volume functions
-# -----------------------------------
+def runVolumeCubeCommand():
+    # defining arbitrary parameters for the shapes we want to calculate
+    width = float(input("Enter width value then press enter... "))
 
-# cube
-print("The area of a cube with side length " + str(width) + " is " + str(findVolumeOfCube(width)) + ".")
-# sphere
-print("The area of a sphere with radius " + str(radius) + " is " + str(findVolumeOfSphere(radius)) + ".")
-# cone
-print("The area of a cone with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCone(radius, height)) + ".")
-# cylinder
-print("The area of a cylinder with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCylinder(radius, height)) + ".")
+    # cube
+    print("The area of a cube with side length " + str(width) + " is " + str(findVolumeOfCube(width)) + ".")
+    runMainPrompt()
+
+def runVolumeSphereCommand():
+    # defining arbitrary parameters for the shapes we want to calculate
+    radius = float(input("Enter radius value then press enter... "))
+
+    # sphere
+    print("The area of a sphere with radius " + str(radius) + " is " + str(findVolumeOfSphere(radius)) + ".")
+    runMainPrompt()
+
+def runVolumeConeCommand():
+    # defining arbitrary parameters for the shapes we want to calculate
+    radius = float(input("Enter radius value then press enter... "))
+    height = float(input("Enter height value then press enter... "))
+
+    # cone
+    print("The area of a cone with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCone(radius, height)) + ".")
+    runMainPrompt()
+
+def runVolumeCylinderCommand():
+    # defining arbitrary parameters for the shapes we want to calculate
+    radius = float(input("Enter radius value then press enter... "))
+    height = float(input("Enter height value then press enter... "))
+
+    # cylinder
+    print("The area of a cylinder with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCylinder(radius, height)) + ".")
+    runMainPrompt()
+
+# ===================================================
+# CODE FOR HANDLING CONSOLE INTERACTIONS:
+# ===================================================
+
+# introductory message
+#----------------------------------
+
+print("Welcome user! This is a script that demonstrates basic arithmetic and geometry.")
+print("You will be prompted to select a calculation that you wish to complete, and then prompted for values.")
+print("One all values are entered you will receive your result.")
+runMainPrompt()
