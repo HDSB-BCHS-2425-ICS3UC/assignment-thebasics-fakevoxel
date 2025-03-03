@@ -27,14 +27,14 @@ def findVolumeOfCylinder(radius, height):
 # ----------------------------------
 
 # variables to be used for basic math
-a = input("Enter a value then press enter... ")
-b = input("Enter b value then press enter... ")
-c = input("Enter c value then press enter... ")
+a = float(input("Enter a value then press enter... "))
+b = float(input("Enter b value then press enter... "))
+c = float(input("Enter c value then press enter... "))
 
 # defining arbitrary parameters for the shapes we want to calculate
-radius = input("Enter radius value then press enter... ")
-width = input("Enter width value then press enter... ")
-height = input("Enter height value then press enter... ")
+radius = float(input("Enter radius value then press enter... "))
+width = float(input("Enter width value then press enter... "))
+height = float(input("Enter height value then press enter... "))
 
 # demonstrating basic math
 # --------------------------------
@@ -49,6 +49,11 @@ print(str(a) + " multiplied by " + str(b) + " is " + str(a*b) + ".")
 print(str(a) + " divided by " + str(b) + " is " + str(a/b) + ".")
 # modulus
 print(str(a) + " modulo " + str(b) + " is " + str(a%b) + ".")
+
+# discriminant
+# -----------------------
+
+print("The discriminant of a quadratic with coefficients of a=" + str(a) + ", b=" + str(b) + ", c=" + str(c) + " is " + discriminant(a, b, c))
 
 # demonstrating the volume functions
 # -----------------------------------
