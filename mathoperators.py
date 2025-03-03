@@ -53,7 +53,7 @@ print(str(a) + " modulo " + str(b) + " is " + str(a%b) + ".")
 # discriminant
 # -----------------------
 
-print("The discriminant of a quadratic with coefficients of a=" + str(a) + ", b=" + str(b) + ", c=" + str(c) + " is " + discriminant(a, b, c))
+print("The discriminant of a quadratic with coefficients of a=" + str(a) + ", b=" + str(b) + ", c=" + str(c) + " is " + str(discriminant(a, b, c)))
 
 # demonstrating the volume functions
 # -----------------------------------
