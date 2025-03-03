@@ -36,15 +36,16 @@ height = 2
 # demonstrating basic math
 # --------------------------------
 
+# addition
 print(str(a) + " plus " + str(b) + " is " + str(a+b) + ".")
-
+# subtraction
 print(str(a) + " minus " + str(b) + " is " + str(a-b) + ".")
-
+# multiplication
 print(str(a) + " multiplied by " + str(b) + " is " + str(a*b) + ".")
-
+# division
 print(str(a) + " divided by " + str(b) + " is " + str(a/b) + ".")
-
-print(str(a) + " modulus " + str(b) + " is " + str(a%b) + ".")
+# modulus
+print(str(a) + " modulo " + str(b) + " is " + str(a%b) + ".")
 
 # demonstrating the volume functions
 # -----------------------------------
