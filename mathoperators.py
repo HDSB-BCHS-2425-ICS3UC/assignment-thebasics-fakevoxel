@@ -1,6 +1,10 @@
 import math
 
-# here we define functions that apply the area formulas of different shapes
+# find the discriminant of a quadratic, given the coefficients
+def discriminant(a, b, c):
+    return (b * b) - (4 * a * c)
+
+# defining functions that apply the volume formulas of different shapes
 #--------------------------------------
 
 # formula for area of a cube is width^3
@@ -19,16 +23,37 @@ def findVolumeOfCone(radius, height):
 def findVolumeOfCylinder(radius, height):
     return math.pi * radius * radius * height
 
+# variables to be used for basic math
+a = 1
+b = 3
+
 # defining arbitrary parameters for the shapes we want to calculate
 # these will be set via user input soon
 radius = 1
 width = 5
 height = 2
 
+# demonstrating basic math
+# --------------------------------
+
+print(str(a) + " plus " + str(b) + " is " + str(a+b) + ".")
+
+print(str(a) + " minus " + str(b) + " is " + str(a-b) + ".")
+
+print(str(a) + " multiplied by " + str(b) + " is " + str(a*b) + ".")
+
+print(str(a) + " divided by " + str(b) + " is " + str(a/b) + ".")
+
+print(str(a) + " modulus " + str(b) + " is " + str(a%b) + ".")
+
+# demonstrating the volume functions
+# -----------------------------------
+
+# cube
 print("The area of a cube with side length " + str(width) + " is " + str(findVolumeOfCube(width)) + ".")
-
+# sphere
 print("The area of a sphere with radius " + str(radius) + " is " + str(findVolumeOfSphere(radius)) + ".")
-
+# cone
 print("The area of a cone with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCone(radius, height)) + ".")
-
+# cylinder
 print("The area of a cylinder with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCylinder(radius, height)) + ".")
