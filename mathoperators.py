@@ -1,4 +1,13 @@
 import math
+ 
+# Message from the developer:
+
+# This script is written how I usually like to write console applications, 
+# where there is a function that records the users input and then calls other functions to handle commands.
+# This is done through a large if/elif statement in the main logic function.
+# 
+# There is one function for each command, one for the main command logic ( runMainPrompt() ), 
+# plus whatever helper functions are necessary.
 
 # ===================================================
 # HELPER FUNCTIONS:
@@ -30,29 +39,25 @@ def findVolumeOfCylinder(radius, height):
 # functions for handling commands
 # ----------------------------------
 
+# the MAIN LOGIC FUNCTION
+# allows the user to input a command and then runs the command based on input
+# all commands will go here after running
+#----------------------------------
 def runMainPrompt():
+
+    # write a prompt for the user
     print("")
     print("----------------------------------")
     print("What operation would you like to run? Type (help) for all possible commands.")
     print("Type (demo) for a demonstration of variable types.")
 
+    # record the user's input
     userInput = input()
 
+    # checking for each available command
     if (userInput == "help"):
         print("")
-        print("Here is a list of all possible commands:")
-        print("")
-        print("(add) - add two values together")
-        print("(subtract) - subtract two values")
-        print("(multiply) - multiply two values")
-        print("(divide) - divide two values")
-        print("(modulus) - find the remainder, from one value divided by another")
-        print("(discriminant) - find the discriminant of a quadratic with supplied coefficients")
-        print("(volume-cube) - find the volume of a cube with a supplied width")
-        print("(volume-sphere) - find the volume of a sphere with a supplied radius")
-        print("(volume-cone) - find the volume of a cone with supplied radius and height")
-        print("(volume-cylinder) - find the volume of a cylinder with supplied radius and height")
-        runMainPrompt()
+        runHelpCommand()
     elif (userInput == "add"):
         print("")
         runAddCommand()
@@ -84,106 +89,157 @@ def runMainPrompt():
         print("")
         runDemoCommand()
 
-# addition
+# the help command, which just shows all other commands and what they do
+#----------------------------------
+def runHelpCommand():
+    print("Here is a list of all possible commands:")
+    print("")
+    print("(add) - add two values together")
+    print("(subtract) - subtract two values")
+    print("(multiply) - multiply two values")
+    print("(divide) - divide two values")
+    print("(modulus) - find the remainder, from one value divided by another")
+    print("(discriminant) - find the discriminant of a quadratic with supplied coefficients")
+    print("(volume-cube) - find the volume of a cube with a supplied width")
+    print("(volume-sphere) - find the volume of a sphere with a supplied radius")
+    print("(volume-cone) - find the volume of a cone with supplied radius and height")
+    print("(volume-cylinder) - find the volume of a cylinder with supplied radius and height")
+    runMainPrompt()
+
+# the addition command
+#----------------------------------
 def runAddCommand():
-    # variables to be used for basic math
+    # get the variables to be used from the user
     a = float(input("Enter an (a) value then press enter... "))
     b = float(input("Enter a (b) value then press enter... "))
 
+    # nicely print the result to the user
     print(str(a) + " + " + str(b) + " is " + str(a+b) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
-# subtraction
+# the subtraction command
+#----------------------------------
 def runSubtractCommand():
-    # variables to be used for basic math
+    # get the variables to be used from the user
     a = float(input("Enter an (a) value then press enter... "))
     b = float(input("Enter a (b) value then press enter... "))
 
+    # nicely print the result to the user
     print(str(a) + " - " + str(b) + " is " + str(a-b) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
-# multiplication
+# the multiplication command
+#----------------------------------
 def runMultiplyCommand():
-    # variables to be used for basic math
+    # get the variables to be used from the user
     a = float(input("Enter an (a) value then press enter... "))
     b = float(input("Enter a (b) value then press enter... "))
 
+    # nicely print the result to the user
     print(str(a) + " * " + str(b) + " is " + str(a*b) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
-# division
+# the division command
+#----------------------------------
 def runDivideCommand():
-    # variables to be used for basic math
+    # get the variables to be used from the user
     a = float(input("Enter an (a) value then press enter... "))
     b = float(input("Enter a (b) value then press enter... "))
 
+    # nicely print the result to the user
     print(str(a) + " / " + str(b) + " is " + str(a/b) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
-# modulus
+# the modulus command
+#----------------------------------
 def runModulusCommand():
-    # variables to be used for basic math
+    # get the variables to be used from the user
     a = float(input("Enter an (a) value then press enter... "))
     b = float(input("Enter a (b) value then press enter... "))
 
+    # nicely print the result to the user
     print(str(a) + " % " + str(b) + " is " + str(a%b) + ".")
+    
     # going back to the main command logic
     runMainPrompt()
 
-# discriminant
+# the discriminant command, which allows you to input coefficients of a quadratic and get the discriminant
+#----------------------------------
 def runDiscriminantCommand():
-    # coefficients of the quadratic
+    # get the coefficients of the quadratic from the user
     a = float(input("Enter an (a) value then press enter... "))
     b = float(input("Enter a (b) value then press enter... "))
     c = float(input("Enter a (c) value then press enter... "))
 
+    # nicely print the result (discriminant) to the user
     print("The discriminant of a quadratic with coefficients of a=" + str(a) + ", b=" + str(b) + ", c=" + str(c) + " is " + str(discriminant(a, b, c)))
+
     # going back to the main command logic
     runMainPrompt()
 
+# the volume-cube command, which allows you to input values to calculate volume of a cube
+#----------------------------------
 def runVolumeCubeCommand():
-    # defining arbitrary parameters for the shapes we want to calculate
+    # get the width value from the user
     width = float(input("Enter a (width) value then press enter... "))
 
-    # cube
+    # nicely print the result (volume) to the user
     print("The area of a cube with side length " + str(width) + " is " + str(findVolumeOfCube(width)) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
+# the volume-sphere command, which allows you to input values to calculate volume of a sphere
+#----------------------------------
 def runVolumeSphereCommand():
-    # defining arbitrary parameters for the shapes we want to calculate
+    # get the radius value from the user
     radius = float(input("Enter a (radius) value then press enter... "))
 
-    # sphere
+    # nicely print the result (volume) to the user
     print("The area of a sphere with radius " + str(radius) + " is " + str(findVolumeOfSphere(radius)) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
+# the volume-cone command, which allows you to input values to calculate volume of a cone
+#----------------------------------
 def runVolumeConeCommand():
-    # defining arbitrary parameters for the shapes we want to calculate
+    # get the radius and height value from the user
     radius = float(input("Enter a (radius) value then press enter... "))
     height = float(input("Enter a (height) value then press enter... "))
 
-    # cone
+    # nicely print the result (volume) to the user
     print("The area of a cone with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCone(radius, height)) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
+# the volume-cylinder command, which allows you to input values to calculate volume of a cylinder
+#----------------------------------
 def runVolumeCylinderCommand():
-    # defining arbitrary parameters for the shapes we want to calculate
+    # get the radius and height value from the user
     radius = float(input("Enter a (radius) value then press enter... "))
     height = float(input("Enter a (height) value then press enter... "))
 
-    # cylinder
+    # nicely print the result (volume) to the user
     print("The area of a cylinder with radius " + str(radius) + " and height " + str(height) + " is " + str(findVolumeOfCylinder(radius, height)) + ".")
+
     # going back to the main command logic
     runMainPrompt()
 
+# the demo command, which displays basic data types to the terminal
+#----------------------------------
 def runDemoCommand():
+
+    # creating one variable for each data type
     intExample = 4
     floatExample = 4.2
     doubleExample = 3.5
@@ -191,14 +247,15 @@ def runDemoCommand():
     charExample = 'a'  
     booleanExample = True
 
+    # displaying those variables on the terminal
     print("There are six variable types that we work with in this course. They are: ")
     print("")
-    print("Integers. Example: " + str(intExample))
-    print("Floats. Example: " + str(floatExample))
-    print("Doubles. Note: Python just makes these floats. Example: " + str(doubleExample))
-    print("Strings. Example: " + stringExample)
-    print("Chars. Example: " + str(charExample))
-    print("Booleans. Example: " + str(booleanExample))
+    print("Integers (whole numbers). Example: " + str(intExample))
+    print("Floats (decimal numbers). Example: " + str(floatExample))
+    print("Doubles (decimal numbers). Note: Python just makes these floats. Example: " + str(doubleExample))
+    print("Strings (a bunch of characters). Example: " + stringExample)
+    print("Chars (just one character). Example: " + str(charExample))
+    print("Booleans (true/false value). Example: " + str(booleanExample))
 
     # going back to the main command logic
     runMainPrompt()
