@@ -1,3 +1,7 @@
+# Name: Maximilian McDiarmid
+# Finishing Date: Mar 4, 2025
+# Description: A basic console application for demonstrating math concepts, formulas, and variable types.
+
 import math
  
 # Message from the developer:
