@@ -24,19 +24,19 @@ def discriminant(a, b, c):
 # defining functions that apply the volume formulas of different shapes
 #--------------------------------------
 
-# formula for area of a cube is width^3
+# formula for volume of a cube is width^3
 def findVolumeOfCube(width):
     return width * width * width
 
-# formula for area of a sphere is (4/3)(pi)(radius^3)
+# formula for volume of a sphere is (4/3)(pi)(radius^3)
 def findVolumeOfSphere(radius):
     return (4 / 3) * radius * radius * radius * math.pi
 
-# formula for area of a cone is (1/3)(pi)(radius^2)(height)
+# formula for volume of a cone is (1/3)(pi)(radius^2)(height)
 def findVolumeOfCone(radius, height):
     return (1/3) * math.pi * radius * radius * height
 
-# formula for area of a cylinder is (pi)(height)(radius^2)
+# formula for volume of a cylinder is (pi)(height)(radius^2)
 def findVolumeOfCylinder(radius, height):
     return math.pi * radius * radius * height
 
@@ -74,6 +74,9 @@ def runMainPrompt():
     elif (userInput == "divide"):
         print("")
         runDivideCommand()
+    elif (userInput == "modulus"):
+        print("")
+        runModulusCommand()
     elif (userInput == "discriminant"):
         print("")
         runDiscriminantCommand()
@@ -196,7 +199,7 @@ def runVolumeCubeCommand():
     width = float(input("Enter a (width) value then press enter... "))
 
     # nicely print the result (volume) to the user
-    print("The area of a cube with side length " + str(width) + " is " + str(findVolumeOfCube(width)) + ".")
+    print("The volume of a cube with side length " + str(width) + " is " + str(findVolumeOfCube(width)) + ".")
 
     # going back to the main command logic
     runMainPrompt()
@@ -247,7 +250,7 @@ def runDemoCommand():
     intExample = 4
     floatExample = 4.2
     doubleExample = 3.5
-    stringExample = "this is a scentence"
+    stringExample = "this is a sentence"
     charExample = 'a'  
     booleanExample = True
 
